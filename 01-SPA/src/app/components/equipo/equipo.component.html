@@ -1,0 +1,58 @@
+<h1 class="animated fadeIn">
+  {{ equipo.nombre | uppercase }} <small>({{ equipo.fecha }})</small>
+</h1>
+<hr />
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+    <img
+      [src]="equipo.img_logo"
+      class="img-responsive center-block d-block mx-auto"
+      [alt]="equipo.nombre"
+    />
+
+    <div class="d-grid gap-2">
+      <button class="btn btn-dark " type="button">Oficial-Page</button>
+      <a
+        [routerLink]="['/equipos']"
+        type="button"
+        class="btn btn-outline-danger btn-block btn-long"
+        >Regresar</a
+      >
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <h3 class="text-center">{{ equipo.nombre }}</h3>
+    <hr />
+    <p>
+      {{ equipo.bio_long }}
+    </p>
+    <div>
+      <img
+        *ngIf="equipo.division == 'west'"
+        class="img-logo"
+        src="assets/img/division/west.webp"
+        alt="West Division"
+      />
+      <img
+        *ngIf="equipo.division == 'east'"
+        class="img-logo"
+        src="assets/img/division/east.webp"
+        alt="East Division"
+      />
+      <img
+        *ngIf="equipo.division == 'central'"
+        class="img-logo"
+        src="assets/img/division/central.webp"
+        alt="East Division"
+      />
+      <img
+        *ngIf="equipo.division == 'north'"
+        class="img-logo"
+        src="assets/img/division/north.webp"
+        alt="East Division"
+      />
+    </div>
+  </div>
+</div>

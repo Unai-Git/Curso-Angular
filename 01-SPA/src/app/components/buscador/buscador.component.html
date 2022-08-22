@@ -1,0 +1,37 @@
+<h1>
+  Buscar: <span>{{ texto }}</span>
+</h1>
+<hr />
+
+<div class="row" *ngIf="equipos.length == 0"; let idx:number = e.id >
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados con: {{ texto }}
+    </div>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="card" *ngFor="let e of equipos; let i = index">
+    <img
+      class="img-responsive center-block d-block mx-auto"
+      [src]="e.img_team"
+      [alt]="e.nombre"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ e.nombre }}</h5>
+      <p class="card-text">
+        {{ e.bio_short }}
+      </p>
+      <p class="card-text">
+        <small class="text-muted">{{ e.fecha }}</small>
+      </p>
+    </div>
+    <button
+      (click)="verEquipo(idx)"
+      type="button"
+      class="btn btn-outline-dark btn-block"
+    >
+      Ver más...
+    </button>
+  </div>
+</div>
