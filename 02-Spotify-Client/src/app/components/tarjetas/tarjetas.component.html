@@ -1,0 +1,24 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    <div class="col" *ngFor="let item of items">
+      <div class="card puntero" (click)="verArtista(item)">
+        <img
+          [src]="item.images | noimage"
+          class="card-img-top"
+          [alt]="item.name"
+          width="100px"
+          height="250px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">
+            <span
+              class="badge rounded-pill text-bg-dark"
+              *ngFor="let artista of item.artists"
+              >{{ artista.name }}</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
