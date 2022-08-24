@@ -1,0 +1,12 @@
+<div [ngSwitch]="alerta">
+  <div *ngSwitchCase="'success'">success</div>
+  <div *ngSwitchCase="'warning'">warning</div>
+  <div *ngSwitchCase="'danger'">danger</div>
+  <div *ngSwitchDefault>dark</div>
+</div>
+
+<div [ngSwitch]="alerta">
+  <div class="alert alert-info" *ngSwitchCase="'info'" role="alert">qwertyuiop</div>
+  <div class="alert alert-secondary" *ngSwitchCase="'secondary'" role="alert">asdfgfhjgkhl</div>
+  <div class="alert alert-success" *ngSwitchCase="'success'" role="alert">zxcvvcbnnvm</div>
+</div>
