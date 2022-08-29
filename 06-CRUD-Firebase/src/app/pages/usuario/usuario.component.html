@@ -1,0 +1,97 @@
+<h1 class="text-center">Usuario</h1>
+<hr />
+
+<div class="row text-right">
+  <div class="col">
+    <button class="btn btn-danger" [routerLink]="['/usuarios']">
+      <i class="fa-solid fa-hand-point-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<!-- Formulario -->
+<div class="row animated fadeIn faster mt-4">
+  <div class="col">
+    <form (ngSubmit)="guardar(f)" #f="ngForm">
+      <div class="form-group">
+        <label>Firebase ID</label>
+        <input
+          type="text"
+          class="form-control"
+          disabled
+          placeholder="Firebase ID"
+          name="id"
+          [(ngModel)]="usuario.id"
+        />
+        <small class="form text text-muted">Campo autogenerado</small>
+      </div>
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="usuario.nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Teléfono</label>
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="Teléfono"
+          name="tel"
+          [(ngModel)]="usuario.tel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>E-Mail</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="E-Mai"
+          name="email"
+          [(ngModel)]="usuario.email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Estado</label>
+        <br />
+        <button
+          *ngIf="usuario.estado"
+          (click)="usuario.estado = false"
+          class="btn btn-outline-success w-100"
+          type="button"
+        >
+          <i class="fa-solid fa-check"></i>
+          Activo
+        </button>
+
+        <button
+          *ngIf="!usuario.estado"
+          (click)="usuario.estado = true"
+          class="btn btn-outline-danger w-100"
+          type="button"
+        >
+          <i class="fa-solid fa-x"></i>
+          Desactivo
+        </button>
+      </div>
+
+      <hr />
+
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-secondary w-50">
+          <i class="fa-solid fa-floppy-disk"></i>
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
